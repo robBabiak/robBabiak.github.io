@@ -38,12 +38,10 @@
         <h1>
 <a id="about-robert-babiak" class="anchor" href="#about-robert-babiak" aria-hidden="true"><span class="octicon octicon-link"></span></a>About Robert Babiak</h1>
 
-<p>I am a Software Engineer with fifteen years of experince, and I have no idea how to make this sound not like bragging. My first job was writting Airline 
-ticketing software for Greyhound Air. Then I moved onto working on a industrial P.L.C. controller application called FrameWorks for GE-Fanuc. After this 
-I moved into the game development industry when I started with Bioware. My first game credit was Never Winter Nights. Knight of the Old Republic on the 
-original x-box was my second game. The last game I worked on for Bioware was Mass effect 1. This marked a big chnage im my life when I moved to Iceland.
-to work for CCP hf on Eve-Online. This was the first MMO that had worked on and also marked my introduction to Python programming, specificly the Stackless
-variation. This is a language and development enviroment that I have fallen in love with. </p>
+<p>I am a Software Engineer with fifteen years of experince, and I have no idea how to make this sound not like bragging. My first job was writting Airline ticketing software for Greyhound Air. Then I moved onto working on a industrial P.L.C. controller application called FrameWorks for GE-Fanuc. </p> 
+<p>After this I moved into the game development industry when I started with Bioware. My first game credit was Never Winter Nights. Knight of the Old Republic on the original x-box was my second game. The last game I worked on for Bioware was Mass effect 1. </p> 
+
+<p>This marked a big change in my life when I moved to Iceland to work for CCP hf on Eve-Online. This was the first MMO that had worked on and also marked my introduction to Python programming, specifically the Stackless variation. This is a language and development environment that I have fallen in love with. </p>
 
 <h1>
 <a id="intrests" class="anchor" href="#intrests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intrests</h1>
@@ -64,6 +62,19 @@ variation. This is a language and development enviroment that I have fallen in l
 <li>Fun Finder - Mobile app (ios) that will help parents find fun activitys for there children in the area. Useing IOS developmen and Google's App Engine.</li>
 <li>Virtual Gameing Table - A projector based system for playing table top games with tablet suport for record keeping. Basily a system to take the record keeping out of table top gameing while preserving the fun of rolling the dice. </li>
 </ul>
+        <h1>
+<a id="jan-23-2015" class="anchor" href="#jan-23-2015" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jan-23-2015 - Micro threading in Game development</h1>
+<p> Working on Eve-only I came to love the concept of main game devlopment being done in a interpreted language. A lot of developers say "You can do game in interpreted languages, it is to slow!", I disagree with this, the advantages out way the detractors. 
+</p>
+<p>
+When a game engine runs it only needs a few things optimized for speed above all else. The graphics rendering and I/O operations need to be as fast as possible, and non blocking. We can not have the game render waiting for a texture to be loaded from the resource pack. So most programmers would say, "we will create a worker thread to load resources and replace unloaded textures as they are loaded". That sounds wonderful, but it takes a lot of programming to make this happen in a thread safe manner. 
+</p>
+<p> But if you have an interpreted language like Stackless Python, you have micro threads. Spawning 1000's of threads for tasks becomes trivial. Now you write your high performance code in C/C++ language. This is then exposed to Python in a thread safe manner, and suddenly you have your graphics engine and IO running  at full tilt with python puttering long doing game state update. For game state updtes and most game code in general an interpreted language is more than fast enough. </p>
+<p> The micro threads have the advantage of simplifying some normmaly scary code. Take the example of loading a texture, under traditional codeing models, you would place a request into a queue and the worker thread would load the resource, and then call some callback to indicate the texture has now been loaded. With micro threads, you just spawn a micro thread to load the texture. And like sycronus code the function loads the texture, a blocking call, and then applys the texture to the game model. Because the creation of micro-threads are so light, we can afford to have 100's of micro threads blocking at any given time. </p>
+<p> These micro-thread designs can be applyed to alot of game play situations. Where befor you would have somesort of timmer mechanisim checking to see if an amount of time has passed, once it did do something. With a micro-threading language you just have the thread sleep for a time and then do it. The code becomes much more readable as the entire logic is encapsulated in a single function. There is no having seperate function it initate, and another to respond on time out. </p>
+<p> An interpreted language also has the advantage no compile times. Anyone who has sat through a 50 min. compile job can atest to the advantage of a rapid turnaround between code change, and code testing. </p>
+<p> Google has now developed the GO programming language that brings the world of micro-threading into the land of compile high-performance code. I see this as the future where not only will the game code be running with micro threads, but if the underlining code is also capabale of micro threading then I can invision a time where a micro-thread created in python will execute in a micro-thread in GO with the advantages of multiple hardware cores stepping into to make the blending between interpreted and compiled code become meaningless. 
+</p>
       </section>
 
     </div>
