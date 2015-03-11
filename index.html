@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="stylesheets/ie.css">
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
   </head>
   <body>
       <div id="header">
@@ -38,8 +37,8 @@
         <h1>
 <a id="about-robert-babiak" class="anchor" href="#about-robert-babiak" aria-hidden="true"><span class="octicon octicon-link"></span></a>About Robert Babiak</h1>
 
-<p>I am a Software Engineer with fifteen years of experince, and I have no idea how to make this sound not like bragging. My first job was writting Airline ticketing software for Greyhound Air. Then I moved onto working on a industrial P.L.C. controller application called FrameWorks for GE-Fanuc. </p> 
-<p>After this I moved into the game development industry when I started with Bioware. My first game credit was Never Winter Nights. Knight of the Old Republic on the original x-box was my second game. The last game I worked on for Bioware was Mass effect 1. </p> 
+<p>I am a Software Engineer with fifteen years of experince, and I have no idea how to make this sound not like bragging. My first job was writting Airline ticketing software for Greyhound Air. Then I moved onto working on a industrial P.L.C. controller application called FrameWorks for GE-Fanuc. </p>
+<p>After this I moved into the game development industry when I started with Bioware. My first game credit was Never Winter Nights. Knight of the Old Republic on the original x-box was my second game. The last game I worked on for Bioware was Mass effect 1. </p>
 
 <p>This marked a big change in my life when I moved to Iceland to work for CCP hf on Eve-Online. This was the first MMO that had worked on and also marked my introduction to Python programming, specifically the Stackless variation. This is a language and development environment that I have fallen in love with. </p>
 
@@ -62,23 +61,102 @@
 <li>Fun Finder - Mobile app (ios) that will help parents find fun activitys for there children in the area. Useing IOS developmen and Google's App Engine.</li>
 <li>Virtual Gameing Table - A projector based system for playing table top games with tablet suport for record keeping. Basily a system to take the record keeping out of table top gameing while preserving the fun of rolling the dice. </li>
 </ul>
-        <h1>
-<a id="jan-23-2015" class="anchor" href="#jan-23-2015" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jan-23-2015 - Micro threading in Game development</h1>
-<p> Working on Eve-only I came to love the concept of main game devlopment being done in a interpreted language. A lot of developers say "You can do game in interpreted languages, it is to slow!", I disagree with this, the advantages out way the detractors. 
+ <hr>
+
+<h1> <a id="Mar-11-2015" class="anchor" href="#mar-11-2015" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mar-11-2015 - Installing Libre Office</h1>
+
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">I chose to work on LibreOffice as my open source project to contribute to. I chose it because it is a software package I use regularly, I had been using Open Office but found out it is no longer open source, and it has some bug/ features that have annoyed me for a long time. </font>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">The first is that the formula editor doesn't use the whole width of the screen for entering markup text, and the other is that it is unstable at times and crashes. These crashes at times require you to delete the settings in order to restore normal operation.  I figure I could at lest see about trapping a bug and reporting it if not fixing it. </font>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">
+  Having used LibreOffice for the last couple of weeks I have found most of the worst bugs that were present in Open office are gone, but the annoying bit about math formula editing is still present. So my focus has shifted to extending the formatting of formulas to include common used formula layouts that are possible by combination of other, that could be better as there own format.
+</font>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">The fist step was to
+find the project site and get it installed, after a bit of poking
+around on IRC I started to do the installation of the dev
+environment.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-left: 0.5in; margin-right: 1in; margin-bottom: 0in; line-height: 100%; page-break-before: auto">
+[08:46] &lt;Sarflin&gt; I am looking for a guide to help me get libre
+office up and compiling on my mac, anyone have a sugestion?</p>
+<p style="margin-left: 0.5in; margin-right: 1in; margin-bottom: 0in; line-height: 100%">
+[08:47] == lajava [~javi@fanzine.igalia.com] has joined
+#libreoffice-dev</p>
+<p style="margin-left: 0.5in; margin-right: 1in; margin-bottom: 0in; line-height: 100%">
+[08:51] &lt;lgodard&gt; Sarflin: have a look at
+https://wiki.documentfoundation.org/Development/BuildingOnMac</p>
+<p style="margin-left: 0.5in; margin-right: 1in; margin-bottom: 0in; line-height: 100%">
+[08:53] &lt;Sarflin&gt; thanks.</p>
+<p style="margin-left: 0.5in; margin-right: 1in; margin-bottom: 0in; line-height: 100%">
+[08:57] == mlechner [~mlechner@pd95b8344.dip0.t-ipconnect.de] has
+quit [Quit: Ex-Chat]</p>
+<p style="margin-left: 0.5in; margin-right: 1in; margin-bottom: 0in; line-height: 100%">
+[08:57] &lt;Sarflin&gt; Next question, can one of you point me at
+where the formula code is? I disloke that it doesn't use the full
+width for entering the formula markup, and want to add some more
+layouts? Basicly looking for a entry point to start learning?</p>
+<p style="margin-left: 0.5in; margin-right: 1in; margin-bottom: 0in; line-height: 100%">
+[08:58] &lt;beluga_&gt; Sarflin: btw. fzsombor was looking into
+setting up a mac dev environment as well.. you should team up :)</p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-before: auto">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">
+  The install instructions for Unix are prominently listed on there web site, but the Mac OS ones were a little harder to find. Turns out I located them by Google about the time Lgodard replied, and proceeded to install from <a href= "https://wiki.documentfoundation.org/Development/BuildingOnMac"><font face="Helvetica, sans-serif">https://wiki.documentfoundation.org/Development/BuildingOnMac </font></a>.</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">
+  The installation process was strait forward although where a few hiccups in getting compatible versions  of some of the dependent software libraries installed. I also had to hide some of the default configurations like <font face="Helvetica, sans-serif">/opt/local/bin/pkg-config</font> to make the default build process run.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">LibreOffice installs
+into the user folder under the folder <font face="Helvetica, sans-serif">~/lo</font>
+and is build from here.
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">I had found a copy of LibreOffice on Github but it is not associated with the official repository as far as I can tell, and the developer install instructions refer to the source at <a href="http://gerrit.libreoffice.org/"><font face="Helvetica, sans-serif">http://gerrit.libreoffice.org</font></a> which seems to be the official repository and where they do code reviews for code submissions. Active and open submissions are listed along with closed( accepted ).<</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">
+  The IRC conversation also pointed me towards the formula code in the <font face="Helvetica, sans-serif">core/starmath</font>  folder, which contains it's own README which points to a form posting that documents the code layout.</font>
+</p>
+
+<hr>
+
+
+<h1> <a id="jan-23-2015" class="anchor" href="#jan-23-2015" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jan-23-2015 - Micro threading in Game development</h1>
+<p> Working on Eve-only I came to love the concept of main game devlopment being done in a interpreted language. A lot of developers say "You can do game in interpreted languages, it is to slow!", I disagree with this, the advantages out way the detractors.
 </p>
 <p>
-When a game engine runs it only needs a few things optimized for speed above all else. The graphics rendering and I/O operations need to be as fast as possible, and non blocking. We can not have the game render waiting for a texture to be loaded from the resource pack. So most programmers would say, "we will create a worker thread to load resources and replace unloaded textures as they are loaded". That sounds wonderful, but it takes a lot of programming to make this happen in a thread safe manner. 
+When a game engine runs it only needs a few things optimized for speed above all else. The graphics rendering and I/O operations need to be as fast as possible, and non blocking. We can not have the game render waiting for a texture to be loaded from the resource pack. So most programmers would say, "we will create a worker thread to load resources and replace unloaded textures as they are loaded". That sounds wonderful, but it takes a lot of programming to make this happen in a thread safe manner.
 </p>
 <p> But if you have an interpreted language like Stackless Python, you have micro threads. Spawning 1000's of threads for tasks becomes trivial. Now you write your high performance code in C/C++ language. This is then exposed to Python in a thread safe manner, and suddenly you have your graphics engine and IO running  at full tilt with python puttering long doing game state update. For game state updtes and most game code in general an interpreted language is more than fast enough. </p>
 <p> The micro threads have the advantage of simplifying some normmaly scary code. Take the example of loading a texture, under traditional codeing models, you would place a request into a queue and the worker thread would load the resource, and then call some callback to indicate the texture has now been loaded. With micro threads, you just spawn a micro thread to load the texture. And like sycronus code the function loads the texture, a blocking call, and then applys the texture to the game model. Because the creation of micro-threads are so light, we can afford to have 100's of micro threads blocking at any given time. </p>
 <p> These micro-thread designs can be applyed to alot of game play situations. Where befor you would have somesort of timmer mechanisim checking to see if an amount of time has passed, once it did do something. With a micro-threading language you just have the thread sleep for a time and then do it. The code becomes much more readable as the entire logic is encapsulated in a single function. There is no having seperate function it initate, and another to respond on time out. </p>
 <p> An interpreted language also has the advantage no compile times. Anyone who has sat through a 50 min. compile job can atest to the advantage of a rapid turnaround between code change, and code testing. </p>
-<p> Google has now developed the GO programming language that brings the world of micro-threading into the land of compile high-performance code. I see this as the future where not only will the game code be running with micro threads, but if the underlining code is also capabale of micro threading then I can invision a time where a micro-thread created in python will execute in a micro-thread in GO with the advantages of multiple hardware cores stepping into to make the blending between interpreted and compiled code become meaningless. 
+<p> Google has now developed the GO programming language that brings the world of micro-threading into the land of compile high-performance code. I see this as the future where not only will the game code be running with micro threads, but if the underlining code is also capabale of micro threading then I can invision a time where a micro-thread created in python will execute in a micro-thread in GO with the advantages of multiple hardware cores stepping into to make the blending between interpreted and compiled code become meaningless.
 </p>
       </section>
 
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+
   </body>
 </html>
