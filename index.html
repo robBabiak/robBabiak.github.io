@@ -62,6 +62,44 @@
 <li>Virtual Gameing Table - A projector based system for playing table top games with tablet suport for record keeping. Basily a system to take the record keeping out of table top gameing while preserving the fun of rolling the dice. </li>
 </ul>
  <hr>
+<h1> <a id="Mar-31-2015" class="anchor" href="#mar-31-2015" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mar-31-
+2015 - Modifying Libre Office</h1>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">
+  I began by exploring the documentation around the Starmath module. The code was mostly impenetrable until is focused on one feature. I decided to duplicate the infinity sign as a getting started task. By searching the code base for infinity I found how the symbol was defined, how it was rendered and parsed. I was able to duplicate the infinity symbol and in the processed learned how the UI files are built, and how the .png files are packaged for icons.
+</font></p>
+
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">
+  After figuring how to duplicate the symbol I reverted all my changes and began looking more at the parser and rendering. The Parsing and rendering are tied together by a node class. This node class defines the character to render, the vertical and horizontal alignment and gets placed into a tree structure. A root symbol will have siblings for symbols that are adjacent to it, and child nodes that make up the parts of the symbol (for instance a super or subscript).
+</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">
+  One of the features that I use alot in taking math nots is the RightArrow and LeftArrow keywords. When typing notes it is time consuming to type long identifiers. I decided to make shortcuts for the two by aliasing &lt;- and -&gt; to be the right and left arrows.
+</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">
+  It turned out that the parsing structure already had the foundation to handle making a shortcut. I only needed to extend two if-then-else blocks to achieve my goal. I made this code change and built the code, tested both intended uses and using the combination of characters within other configurations of letters and numbers. After testing enough that I felt confident enough I committed my change. Then re-based with the main line and rebuilt the package, fast forward two hours, once the build was done I retested everything.
+</font></p>
+
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">
+  Now to push to Gerrit( https://gerrit.libreoffice.org ) and this is where I ran into problems. I followed the simple instructions for  <a href="https://wiki.documentfoundation.org/Development/gerrit/setup" >getting set up with gerrit</a>, and it didn't work. Turns out that when I had cloned the libreoffice git repository iIhad used the read-only one. The readonly one automaticly rejects all push requests.
+</font></p>
+<pre>
+[3:31 PM] <Sarflin> I am getting this error when I try to push to gerrit "fatal: remote error: access denied or repository not exported: /core" any ideas what i did wrong?
+[3:33 PM] <moggi> Sarflin: did you change the push url to logerrit?
+[3:34 PM] <moggi> Sarflin: https://wiki.documentfoundation.org/Development/gerrit/setup#Setting_yourself_up_for_gerrit_-_the_manual_way step 6
+  </pre>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">
+  Moggi nailed it, I changed the url and pushed my change. This automatically submits a code review for my patch up to gerrit. It also starts a automatic compile of the patch and main code. This shows up as the Jenkins review on my code submission (see image). The other thing is the git push also triggered a message in the IRC channel.
+</font></p>
+  <img src="images/Patch1.png" />
+<pre>
+  [4:50 PM] <logerritbot> Robert Babiak proposed a change to core: Added shortcut for arrows when doing start math formulas  https://gerrit.libreoffice.org/15011
+</pre>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">
+  After a couple of days, I had gotten two other review and my patch was officially accepted. YAAAA!!!  <br/>
+  Next up I want to add predefined projections, Linear Transformations, and augmented matrix. These will involve not only adding additional definitions (they are defined a lot like the infinite symbol) but help text also. 
+</font></p>
+
+
+
 
 <h1> <a id="Mar-11-2015" class="anchor" href="#mar-11-2015" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mar-11-2015 - Installing Libre Office</h1>
 
